@@ -7,8 +7,8 @@ def inspectboxes(box, boxes, keys):
         box: list
         keys: set
     """
-    if type(box) != list:
-        return
+    # if type(box) != list:
+    #     return
     for i in box:
         if i not in keys and i < len(boxes):
             keys.add(i)
@@ -19,8 +19,8 @@ def canUnlockAll(boxes):
     """ Find if all the boxes can be opened
         boxes: list of list
     """
-    if boxes == [] or boxes is None or type(boxes[0]) != list:
-        return False
+    # if boxes == [] or boxes is None or type(boxes[0]) != list:
+    #     return False
     keys = set([0])
     inspectboxes(boxes[0], boxes, keys)
 
