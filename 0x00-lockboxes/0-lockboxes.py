@@ -19,7 +19,8 @@ def canUnlockAll(boxes):
     """
     keys = set([0])
     inspectboxes(boxes[0], boxes, keys)
-    if len(keys) == len(boxes):
-        return True
-    else:
-        return False
+
+    for i in range(len(boxes)):
+        if i not in keys:
+            return False
+    return True
