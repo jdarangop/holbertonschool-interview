@@ -10,7 +10,7 @@ def inspectboxes(box, boxes, keys):
     # if type(box) != list:
     #     return
     for i in box:
-        if i not in keys and i < len(boxes):
+        if (i not in keys and i < len(boxes)) and (type(i) == int and i >= 0):
             keys.add(i)
             inspectboxes(boxes[i], boxes, keys)
 
