@@ -11,9 +11,15 @@ def minOperations(n):
     if type(n) != int or n <= 1:
         return 0
     result = 0
-    for i in range(2, n + 1):
-        while(n % i == 0):
+    i = 2
+    # while(n % i == 0 and i <= n + 1):
+    # for i in range(2, n + 1):
+    while(i <= n + 1):
+        if (n % i == 0):
             result += i
             n = n / i
+        else:
+            i += 1
+    #    i += 1
 
     return result
