@@ -28,7 +28,7 @@ int is_palindrome(listint_t **head)
 	int i, j, lenght, *numbers;
 
 	if (*head == NULL)
-		return (0);
+		return (1);
 	lenght = len(*head);
 	numbers = malloc(sizeof(int) * lenght);
 	for (i = 0; i < lenght; i++)
