@@ -6,7 +6,7 @@ from signal import signal, SIGINT
 
 def handler(signum, frame):
     """ Handler for the signal."""
-    print("File_size: {}".format(total_size))
+    print("File size: {}".format(total_size))
     for j in sorted(errors.keys()):
         print("{}: {}".format(j, errors[j]))
     raise KeyboardInterrupt
@@ -23,7 +23,7 @@ for i in sys.stdin:
     errors[splitted[7]] += 1
     counter += 1
     if counter % 10 == 0:
-        print("File_size: {}".format(total_size))
+        print("File size: {}".format(total_size))
         for j in sorted(errors.keys()):
             print("{}: {}".format(j, errors[j]))
     signal(SIGINT, handler)
