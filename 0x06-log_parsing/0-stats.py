@@ -18,7 +18,8 @@ try:
         if counter % 10 == 0:
             print("File size: {}".format(total_size))
             for j in sorted(errors.keys()):
-                print("{}: {}".format(j, errors[j]))
+                if errors[j] != 0:
+                    print("{}: {}".format(j, errors[j]))
 except AssertionError as error:
     pass
 finally:
