@@ -13,13 +13,14 @@ try:
         splitted = i.split(" ")
         file_size = int(splitted[8].replace("\n", ""))
         total_size += file_size
-        errors[splitted[7]] += 1
-        counter += 1
+        if splitted[7] in errors:
+            errors[splitted[7]] += 1
         if counter % 10 == 0:
             print("File size: {}".format(total_size))
             for j in sorted(errors.keys()):
                 if errors[j] != 0:
                     print("{}: {}".format(j, errors[j]))
+        counter += 1
 except AssertionError as error:
     pass
 finally:
