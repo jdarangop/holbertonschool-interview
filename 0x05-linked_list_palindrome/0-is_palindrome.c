@@ -29,11 +29,12 @@ int is_palindrome(listint_t **head)
 
 	if (*head == NULL)
 		return (1);
-	lenght = len(*head);
+	lenght = len(*head) / 2;
 	numbers = malloc(sizeof(int) * lenght);
 	for (i = 0; i < lenght; i++)
 	{
-		numbers[i] = current->n;
+		if (i > lenght)
+			numbers[i] = current->n;
 		current = current->next;
 	}
 	for (i = 0, j = lenght - 1; i < j; i++, j--)
