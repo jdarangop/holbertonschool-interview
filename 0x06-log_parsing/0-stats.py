@@ -26,4 +26,5 @@ except AssertionError as error:
 finally:
     print("File size: {}".format(total_size))
     for j in sorted(errors.keys()):
-        print("{}: {}".format(j, errors[j]))
+        if errors[j] != 0:
+            print("{}: {}".format(j, errors[j]))
