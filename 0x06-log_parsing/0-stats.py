@@ -11,11 +11,11 @@ errors = {"200": 0, "301": 0, "400": 0, "401": 0,
 try:
     for i in sys.stdin:
         splitted = i.split(" ")
-        if len(splitted) == 9:
-            file_size = int(splitted[8].replace("\n", ""))
+        if len(splitted) >= 2:
+            file_size = int(splitted[-1].replace("\n", ""))
             total_size += file_size
-            if splitted[7] in errors:
-                errors[splitted[7]] += 1
+            if splitted[-2] in errors:
+                errors[splitted[-2]] += 1
             if counter % 10 == 0:
                 print("File size: {}".format(total_size))
                 for j in sorted(errors.keys()):
