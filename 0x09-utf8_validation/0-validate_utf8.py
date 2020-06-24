@@ -25,6 +25,8 @@ def validUTF8(data):
         Returns:
             True if it's valid, False if doesn't.
     """
+    if type(data) != list:
+        return False
     i = 0
     while i < len(data):
         if data[i] < 1 << 7:
