@@ -12,40 +12,44 @@ void slide_left(int *line, size_t size)
 {
 	int counter, i, j;
 
-		counter = 0;
-		for (i = 0; i < (int)size; i++)
+	counter = 0;
+	for (i = 0; i < (int)size; i++)
+	{
+		if (i == (int)size - 1)
 		{
-			if (i == (int)size - 1)
+			line[counter] = line[i];
+			counter++;
+		}
+		if (line[i] == 0)
+			continue;
+		for (j = i + 1; j < (int)size; j++)
+		{
+			if (line[j] == 0 && j == (int)size - 1)
 			{
 				line[counter] = line[i];
 				counter++;
 			}
-			if (line[i] != 0)
+			if (line[j] == 0)
+				continue;
+			if (line[i] == line[j])
 			{
-				for (j = i + 1; j < (int)size; j++)
-				{
-					if (line[j] == 0)
-						continue;
-					if (line[i] == line[j])
-					{
-						line[counter] = line[i] * 2;
-						counter++;
-						i = j;
-						break;
-					}
-					if (line[i] != line[j])
-					{
-						line[counter] = line[i];
-						counter++;
-						break;
-					}
-				}
+				line[counter] = line[i] * 2;
+				counter++;
+				i = j;
+				break;
+			}
+			if (line[i] != line[j])
+			{
+				line[counter] = line[i];
+				counter++;
+				break;
 			}
 		}
-		for (i = counter; i < (int)size; i++)
-		{
-			line[i] = 0;
-		}
+	}
+	for (i = counter; i < (int)size; i++)
+	{
+		line[i] = 0;
+	}
 }
 
 
@@ -60,40 +64,44 @@ void slide_right(int *line, size_t size)
 {
 	int counter, i, j;
 
-		counter = size - 1;
-		for (i = size - 1; i >= 0; i--)
+	counter = size - 1;
+	for (i = size - 1; i >= 0; i--)
+	{
+		if (i == 0)
 		{
-			if (i == 0)
+			line[counter] = line[i];
+			counter--;
+		}
+		if (line[i] == 0)
+			continue;
+		for (j = i - 1; j >= 0; j--)
+		{
+			if (line[j] == 0 && j == 0)
 			{
 				line[counter] = line[i];
 				counter--;
 			}
-			if (line[i] != 0)
+			if (line[j] == 0)
+				continue;
+			if (line[i] == line[j])
 			{
-				for (j = i - 1; j >= 0; j--)
-				{
-					if (line[j] == 0)
-						continue;
-					if (line[i] == line[j])
-					{
-						line[counter] = line[i] * 2;
-						counter--;
-						i = j;
-						break;
-					}
-					if (line[i] != line[j])
-					{
-						line[counter] = line[i];
-						counter--;
-						break;
-					}
-				}
+				line[counter] = line[i] * 2;
+				counter--;
+				i = j;
+				break;
+			}
+			if (line[i] != line[j])
+			{
+				line[counter] = line[i];
+				counter--;
+				break;
 			}
 		}
-		for (i = counter; i >= 0; i--)
-		{
-			line[i] = 0;
-		}
+	}
+	for (i = counter; i >= 0; i--)
+	{
+		line[i] = 0;
+	}
 }
 
 
