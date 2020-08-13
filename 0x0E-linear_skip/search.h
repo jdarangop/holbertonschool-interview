@@ -5,7 +5,7 @@
 
 
 /**
- * struct skiplist_s - Singly linked list with an express lane
+ * struct skiplist_t - Singly linked list with an express lane
  *
  * @n: Integer
  * @index: Index of the node in the list
@@ -17,10 +17,10 @@
  */
 typedef struct skiplist_t
 {
-    int n;
-    size_t index;
-    struct skiplist_t *next;
-    struct skiplist_t *express;
+	int n;
+	size_t index;
+	struct skiplist_t *next;
+	struct skiplist_t *express;
 } skiplist_t;
 
 skiplist_t *linear_skip(skiplist_t *list, int value);
