@@ -10,7 +10,7 @@ def rain(walls):
             (int) indicating total amount of rainwater retained.
                   0 if the list is empty.
     """
-    if walls == []:
+    if type(walls) != list or walls is None or walls == []:
         return 0
     tmp = 0
     tmp_sum = 0
@@ -18,6 +18,8 @@ def rain(walls):
     for i in range(len(walls)):
         if i == 0 and walls[i] == 0:
             continue
+        if walls[i] < 0:
+            return 0
         if walls[i] > tmp:
             tmp = walls[i]
             total_sum += tmp_sum
