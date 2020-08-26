@@ -14,5 +14,6 @@ if __name__ == "__main__":
     # walls = [2, 1]
     # walls = []
     # walls = None
-    walls = [0, 1, 0, -2, 0, 3, 0, 4]
+    # walls = [0, 1, 0, -2, 0, 3, 0, 4]
+    walls = [0, 4, 0, 3, 0, 2, 0, 1]
     print(rain(walls))

@@ -27,4 +27,18 @@ def rain(walls):
         else:
             tmp_sum += (tmp - walls[i])
 
+    tmp = 0
+    tmp_sum = 0
+    for i in range(len(walls) - 1, -1, -1):
+        if i == 0 and walls[i] == 0:
+            continue
+        if walls[i] < 0:
+            return 0
+        if walls[i] > tmp:
+            tmp = walls[i]
+            total_sum += tmp_sum
+            tmp_sum = 0
+        else:
+            tmp_sum += (tmp - walls[i])
+
     return total_sum
