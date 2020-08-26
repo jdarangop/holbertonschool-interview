@@ -30,7 +30,7 @@ def rain(walls):
     tmp = 0
     tmp_sum = 0
     for i in range(len(walls) - 1, -1, -1):
-        if i == 0 and walls[i] == 0:
+        if i == len(walls) - 1 and walls[i] == 0:
             continue
         if walls[i] < 0:
             return 0
