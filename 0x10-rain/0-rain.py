@@ -20,7 +20,7 @@ def rain(walls):
             continue
         if walls[i] < 0:
             return 0
-        if walls[i] > tmp:
+        if walls[i] >= tmp:
             tmp = walls[i]
             total_sum += tmp_sum
             tmp_sum = 0
