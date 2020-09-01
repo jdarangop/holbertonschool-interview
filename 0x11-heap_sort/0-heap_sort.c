@@ -129,6 +129,8 @@ void heap_sort(int *array, size_t size)
 {
 	int i;
 
+	if (array == NULL && size <= 1)
+		return;
 	heap_max(array, size, (int)size);
 	for (i = (int)size - 1; i > 0; i--)
 	{
