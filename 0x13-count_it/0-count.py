@@ -10,7 +10,6 @@ def count_words(subreddit, word_list, titles=[], after="null"):
             subreddit: (str) subreddit to search.
             word_list: (list) words to search.
             titles: (list) titles of the subreddit.
-            after: ().
         Returns:
             None.
     """
@@ -38,7 +37,8 @@ def count_words(subreddit, word_list, titles=[], after="null"):
                 lower = [j.lower() for j in title_words]
                 counter += lower.count(word.lower())
             counter_dict[word] += counter
-        sorted_dict = sorted(counter_dict.items(), key=lambda x: x[1], reverse=True)
+        sorted_dict = sorted(counter_dict.items(),
+                             key=lambda x: x[1], reverse=True)
         for i, j in sorted_dict:
             if j != 0:
                 print("{}: {}".format(i, j))
