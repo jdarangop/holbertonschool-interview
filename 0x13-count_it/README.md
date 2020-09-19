@@ -6,6 +6,7 @@
 Write a recursive function that queries the Reddit API, parses the title of all hot articles, and prints a sorted count of given keywords (case-insensitive, delimited by spaces. Javascript should count as javascript, but java should not).
 
 Requirements:
+
     - Prototype: def count_words(subreddit, word_list)
     - Note: You may change the prototype, but it must be able to be called with just a subreddit supplied and a list of keywords. AKA you can add a counter or anything else, but the function must work without supplying a starting value in the main.
     - Results should be printed in descending order, by the count, not the title. Words with no matches should be skipped and not printed.
