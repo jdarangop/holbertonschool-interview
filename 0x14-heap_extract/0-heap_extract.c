@@ -90,10 +90,10 @@ int heap_extract(heap_t **root)
 		}
 	}
 	tmp->n = last->n;
-	if (last->parent->left)
-		last->parent->left = NULL;
-	else
+	if (last->parent->right)
 		last->parent->right = NULL;
+	else
+		last->parent->left = NULL;
 	free(last);
 	return (value);
 }
