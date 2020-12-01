@@ -33,7 +33,9 @@ def island_perimeter(grid):
         Returns:
             (int) the perimeter of the island.
     """
-    lista = []
+    if grid is None or len(grid) == 0 or len(grid[0]) == 0:
+        return 0
+
     total = 0
     for row in range(len(grid)):
         for col in range(len(grid[0])):
