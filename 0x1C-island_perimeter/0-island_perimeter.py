@@ -34,7 +34,19 @@ def island_perimeter(grid):
             (int) the perimeter of the island.
     """
     lista = []
+    total = 0
     for row in range(len(grid)):
         for col in range(len(grid[0])):
             if grid[row][col] == 1:
-                return recurtion(grid, row, col, lista)
+                total += 4
+                if grid[row - 1][col] == 1:
+                    total -= 1
+                if grid[row + 1][col] == 1:
+                    total -= 1
+                if grid[row][col - 1] == 1:
+                    total -= 1
+                if grid[row][col + 1] == 1:
+                    total -= 1
+                # return recurtion(grid, row, col, lista)
+
+    return total
