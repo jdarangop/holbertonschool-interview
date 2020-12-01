@@ -40,13 +40,9 @@ def island_perimeter(grid):
             if grid[row][col] == 1:
                 total += 4
                 if grid[row - 1][col] == 1:
-                    total -= 1
-                if grid[row + 1][col] == 1:
-                    total -= 1
+                    total -= 2
                 if grid[row][col - 1] == 1:
-                    total -= 1
-                if grid[row][col + 1] == 1:
-                    total -= 1
+                    total -= 2
                 # return recurtion(grid, row, col, lista)
 
     return total
