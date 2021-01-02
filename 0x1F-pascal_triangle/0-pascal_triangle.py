@@ -1,4 +1,4 @@
-#!/usr/bine/env python3
+#!/usr/bin/python3
 """ Pascal's Triangle """
 
 
